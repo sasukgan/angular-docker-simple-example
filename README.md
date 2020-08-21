@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Dcker Instructions
+
+### build and run dev:
+```shell
+ docker build -t example:dev .
+ docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm example:dev
+```
+
+### build and run prod:
+```shell
+docker build -f Dockerfile-prod -t example:prod .
+docker run -it -p 80:80 --rm example:prod
+```
